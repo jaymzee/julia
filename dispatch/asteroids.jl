@@ -1,0 +1,19 @@
+# Asteroids™ 
+abstract type GameObject end
+struct Asteroid <: GameObject end
+struct Ship <: GameObject end
+
+# Collisions are symmetric
+collide(a::GameObject, b::GameObject) = collide(b, a)
+
+collide(first::Asteroid, second::Asteroid) =  #...
+collide(asteroid::Asteroid, ship::Ship) =  #...
+
+# Added for Moar Asteroids™
+struct Bullet <: GameObject end
+
+collide(first::Bullet, second::Bullet) =  #...
+collide(bullet::Bullet, asteroid::Asteroid) =  #...
+collide(bullet::Bullet, ship::Ship) =  #...
+
+# etc...
