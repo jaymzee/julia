@@ -1,6 +1,6 @@
 using Printf
 
-function g(x::T, y::T)::T where {T}
+function g(x::T, y::T)::T where {T <: Number}
     2x + 2y
 end
 
